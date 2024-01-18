@@ -1172,8 +1172,8 @@ extern "C" {
 
   PUBLIC void csoundSetOpenSoundFileCallback(CSOUND *p,
                                              void *(*openSoundFileCallback)(CSOUND*,
-                                                                          const char*,
-                                                                          int, void*));
+                                                                            const char*,
+                                                                            int, void*));
 
   /**
    * Sets an external callback for opening a file.
@@ -1186,8 +1186,9 @@ extern "C" {
    * This callback is retained after a csoundReset() call.
    */
   PUBLIC void csoundSetOpenFileCallback(CSOUND *p,
-                                        FILE *(*func)(CSOUND*, const char*,
-                                                     const char*));
+                                        FILE *(*openFileCallback)(CSOUND*,
+                                                                  const char*,
+                                                                  const char*));
 
 #if !defined(SWIG)
   /**
